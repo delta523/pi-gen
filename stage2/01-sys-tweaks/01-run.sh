@@ -53,4 +53,14 @@ on_chroot << EOF
 usermod --pass='*' root
 EOF
 
+on_chroot << EOF
+echo Patching certs...
+c_rehash /etc/ssl/certs
+EOF
+
+on_chroot << EOF
+curl -sSL https://get.docker.com/ | sh
+usermod -aG docker pi
+EOF
+
 rm -f "${ROOTFS_DIR}/etc/ssh/"ssh_host_*_key*
