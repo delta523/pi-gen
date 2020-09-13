@@ -354,3 +354,7 @@ To resolve this, ensure that the following files are available (install them if 
 ```
 
 You may also need to load the module by hand - run `modprobe binfmt_misc`.
+
+## Shop Server Portal Imager
+This repo is forked from the pi-gen to generate RPI images with preinstalled images and preset configuration.
+Use the docker build tool to create the image
