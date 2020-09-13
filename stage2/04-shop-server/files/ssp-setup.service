@@ -1,0 +1,13 @@
+[Unit]
+Description=Shop Server Setup
+#After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/shop-server-setup/setup.sh
+RemainAfterExit=true
+ExecStop=/opt/shop-server-setup/teardown.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
